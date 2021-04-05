@@ -1,7 +1,7 @@
 // Giving the following code, modify MyClass so that functions myFunction1 and myFunction2 cane performed 
 //    after and only after all the async operations in constructor are completed.
 
-// CONSTRAINS:
+// Constraints:
 // -- Only MyClass can modify 
 
 // CAN'T CHANGE
@@ -28,8 +28,9 @@ class MyClass {
     }
 }
 
-// SOLUTION
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// The solution:
 class MyClass {
     isReady: Promise<any>;
     
