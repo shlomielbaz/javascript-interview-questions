@@ -3,7 +3,7 @@
 // Implement the function computeClosestToZero(ts)  which takes an array of temperatures  and returns the temperature closest to 0.
 // Constraints:
 // - If the array is empty, the function should return 0
-// - 0 ≤&nbsp;<code>ts</code> size ≤ 10000
+// - 0 ≤ ts size ≤ 10000
 // - If two temperatures are equally close to zero, the positive temperature must be returned.</strong> For example, if the input is -5 and 5, then 5 must be returned.
 
 function computeClosestToZero(ts) {
@@ -32,6 +32,5 @@ function computeClosestToZero(ts) {
         }
         return val1
     }
-    
     return 0;
 }
