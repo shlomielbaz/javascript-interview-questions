@@ -10,7 +10,7 @@ function computeClosestToZero(ts) {
     // Write your code here
     // To debug: console.error('Debug messages...');
 
-    if ((ts instanceof Array) && (ts.length > 0) && (ts.length < 10000)) {
+    if ((ts instanceof Array) && (ts.length > 0)) { //  && (ts.length < 10000)
         const upToZero = [];
         const lessThenZero = []
         for(let item of ts) {
