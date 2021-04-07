@@ -8,7 +8,7 @@
   
   <li>
     In this exercise, you have to analyze records of temperature to find the closest to zero.<br />
-    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/computeClosestToZero.js">computeClosestToZero.js</a><br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/compute-closest-to-zero.js">compute-closest-to-zero.js</a><br />
   </li>
   
   <li>
