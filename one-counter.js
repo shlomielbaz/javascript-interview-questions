@@ -9,7 +9,6 @@ function bitCount(u)
      return ((uCount + (uCount >> 3)) & 030707070707) % 63;
 }
 
-
 function bitCount(x){
     x = (x & (0x55555555)) + ((x >> 1) & (0x55555555));
     x = (x & (0x33333333)) + ((x >> 2) & (0x33333333));
