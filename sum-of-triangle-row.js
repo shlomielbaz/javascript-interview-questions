@@ -28,7 +28,7 @@ function rowSumOddNumbers(n) {
   	return sum;
 }
 
-// Better solution:
+// After manage results table, I found a recurring pattern where the given number is in a power of 3 so, the etter solution is:
 function rowSumOddNumbers(n) {
   	return n * n * n;
 }
