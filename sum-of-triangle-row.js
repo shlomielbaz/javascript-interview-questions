@@ -28,6 +28,11 @@ function rowSumOddNumbers(n) {
   	return sum;
 }
 
+// Better solution:
+function rowSumOddNumbers(n) {
+  	return n * n * n;
+}
+
 
 /*
 const chai = require("chai");
