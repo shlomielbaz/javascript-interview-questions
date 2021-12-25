@@ -16,16 +16,16 @@ Calculate the sum of the numbers in the nth row of this triangle (starting at in
 
 
 function rowSumOddNumbers(n) {
-  sum = 0;
+	sum = 0;
 	for(let i=1, pivot=1; i<=n; i++) {
-    for (let j=1; j<=i; j++) {
-            if (i == n) {
-              sum = sum + pivot;
-            }
-        pivot = pivot + 2;
-    }
-  }
-  return sum;
+    		for (let j=1; j<=i; j++) {
+            		if (i == n) {
+              			sum = sum + pivot;
+            		}
+        		pivot = pivot + 2;
+    		}
+  	}
+  	return sum;
 }
 
 
