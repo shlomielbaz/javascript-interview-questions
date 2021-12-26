@@ -45,9 +45,9 @@ const root = nodes[0];
 const findPath = (root, targetNode, call, path) => {
   path = path || [];
   
-  if (root == undefined) {
-    return call(undefined)
-  }
+  // if (root == undefined) {
+  //   return call(undefined)
+  // }
   
   if (root === targetNode) {
     return call(path)
@@ -82,7 +82,7 @@ function LCA(root, a, b) {
   
   for (let idx = 0; idx < pathToA.length; idx++) {
     if (pathToA[idx] !== pathToB[idx]) {
-      return target;
+      break;
     }
     target = pathToA[idx]
   }
@@ -90,4 +90,4 @@ function LCA(root, a, b) {
   return target;
 }
 
-console.log('The lowest common ancestor (LCA) is: ', LCA(root, nodes[1], nodes[18]));
+console.log('The lowest common ancestor (LCA) is: ', LCA(root, nodes[1], nodes[8]));
