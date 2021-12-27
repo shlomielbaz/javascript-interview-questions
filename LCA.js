@@ -40,22 +40,20 @@ addChildren(nodes[6], [nodes[7], nodes[8]]); // d
 
 const root = nodes[0];
 
-
-
 const findPath = (root, targetNode, call, path) => {
   path = path || [];
   
-  // if (root == undefined) {
-  //   return call(undefined)
-  // }
-  
   if (root === targetNode) {
+    path.push(root.name)
     return call(path)
   }
   else {
     root && path.push(root.name)
     root && root.children && root.children.forEach(x => {
-      findPath(x, targetNode, call, path)
+      if (x === targetNode) {
+        return call(path)
+      }
+      return findPath(x, targetNode, call, path)
     })
   }
 }
@@ -63,8 +61,12 @@ const findPath = (root, targetNode, call, path) => {
 
 
 function LCA(root, a, b) {
+  if (!a ||  !b) {
+    return 'PROVIDED INVALID NODES'
+  }
+  
   let pathToA;
-  let pathToB 
+  let pathToB;
       
   findPath(root, a, (res) => {
     pathToA = res
@@ -72,11 +74,7 @@ function LCA(root, a, b) {
   
   findPath(root, b, (res) => {
     pathToB = res
-  })
-  
-  if (!pathToA ||  !pathToB) {
-    return 'NO RESULTS'
-  }
+  });
   
   let target;
   
@@ -90,4 +88,4 @@ function LCA(root, a, b) {
   return target;
 }
 
-console.log('The lowest common ancestor (LCA) is: ', LCA(root, nodes[1], nodes[8]));
+console.log('The lowest common ancestor (LCA) is: ', LCA(root, nodes[1], nodes[0]));
