@@ -74,9 +74,9 @@ function LCA(root, a, b) {
     pathToB = res
   })
   
- if (!pathToA ||  !pathToB) {
-   return 'NO RESULTS'
- }
+  if (!pathToA ||  !pathToB) {
+    return 'NO RESULTS'
+  }
   
   let target;
   
