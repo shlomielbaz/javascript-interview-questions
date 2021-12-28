@@ -2,14 +2,14 @@ N - represent number of lines,
 A to K represent a seats mark (I excluded) of each line.
 
 The seats in the hall orgenized:
-[ A | B | C ]     [  D | E | F | G ]    [  H | J | k ]
+[ A | B | C ]     [  D | E | F | G ]    [  H | J | K ]
 
 
 Your task is write a solution the returns the combination of sequence of 4 seats,
   the 'sequence' of 4 can be achived from:
     2 seats from the left/right groups and 2 seats from the middle group or;
     4 seats from the middle group, for example:
-    [ A | B | C ]     [ D | E | F | G ]    [ H | J | k ]
+    [ A | B | C ]     [ D | E | F | G ]    [ H | J | K ]
     [ - | X | X ]     [ X | X | - | - ]    [ - | - | - ]
     [ - | - | - ]     [ X | X | X | X ]    [ - | - | - ]
     [ - | - | - ]     [ - | - | X | X ]    [ X | X | - ]
@@ -17,7 +17,7 @@ Your task is write a solution the returns the combination of sequence of 4 seats
     
     
 solution(2, '1A 2F 1G 3H')
-[ A | B | C ]     [ D | E | F | G ]    [ H | J | k ]
+[ A | B | C ]     [ D | E | F | G ]    [ H | J | K ]
 [ + | - | - ]     [ - | - | - | + ]    [ - | - | - ]
 [ - | - | - ]     [ - | - | + | - ]    [ - | - | - ]
 [ - | - | - ]     [ - | - | - | - ]    [ + | - | - ]
