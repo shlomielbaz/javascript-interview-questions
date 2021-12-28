@@ -45,17 +45,15 @@ const findPath = (root, targetNode, call, path) => {
   
   if (root === targetNode) {
     path.push(root.name)
-    return call(path)
+    return path
   }
-  else {
-    root && path.push(root.name)
-    root && root.children && root.children.forEach(x => {
-      if (x === targetNode) {
-        return call(path)
-      }
-      return findPath(x, targetNode, call, path)
-    })
-  }
+  
+  root && path.push(root.name)
+  root && root.children && root.children.forEach(x => {
+    return findPath(x, targetNode, path)
+  });
+  
+  return path
 }
 
 
