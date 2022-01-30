@@ -1,5 +1,4 @@
-
-
+// Write a function that check the validation of math expretion
 // GOOD: ([abc]){[(2)3+3(2)]}
 // BAD: ((()
 // BAD: [)]
