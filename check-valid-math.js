@@ -15,7 +15,6 @@ function isValid(str) {
     }
     
     for (let idx = 0; idx < len; idx++) {
-        
         let chr = str.charAt(idx);
       
         if ('{[()]}'.indexOf(chr) == -1) {
