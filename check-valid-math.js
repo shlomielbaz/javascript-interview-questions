@@ -6,7 +6,7 @@
 // BAD: ))))))
 
 function isValid(str) {
-    let len = str.length;
+    const len = str.length;
     const stack = [];
     const checker = {
         ')': '(',
@@ -37,9 +37,19 @@ function isValid(str) {
     if (stack.length > 0) {
         return false
     }
+  
     return true;
 }
 
+/*
+
+Examples:
+-- isValid('((()')                  // false
+-- isValid('(((((((')               // false
+-- isValid('))))))')                // false
+-- isValid('([abc]){[(2)3+3(2)]}')  // true
+
+*/
 
 
 
