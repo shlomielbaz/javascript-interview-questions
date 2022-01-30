@@ -1,3 +1,4 @@
+// Write a function provide a report of object changes in a most efficient way
 
 function compare(oldObjects, newObjects) {
   const result = {};
