@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>This is the title of the webpage!</title>
+    <style>
+        /* Remove default bullets */
+        ul,
+        #tree-root {
+            list-style-type: none;
+        }
+
+        /* Remove margins and padding from the parent ul */
+        #tree-root {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the caret/arrow */
+        #tree-root li {
+            cursor: pointer;
+            user-select: none;
+            /* Prevent text selection */
+        }
+
+        li::before {
+            content: "\25A3";
+            color: black;
+            margin-right: 6px;
+        }
+
+        /* Create the caret/arrow with a unicode, and style it */
+        .caret::before {
+            content: "\25B7";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+        .caret-down::before {
+            transform: rotate(90deg);
+
+        }
+
+        /* Hide the nested list */
+        .nested {
+            display: none;
+        }
+
+        /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+        .active {
+            display: block;
+        }
+
+        #search-result {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input id="search-box" type="number" placeholder="Enter id node and press enter" style="width: 80%" />
+    <div id="search-result">&nbsp;</div>
+    <ul id="tree-root"></ul>
+
+    <script>
+        // http://www.mocky.io/v2/5c3c7ad13100007400a1a401
+        const seracher = {};
+        tree = {}
+
+        function buildTree(e) {
+            e.cancelBubble = true;
+
+            const node = findNode(this.dataset.id);
+
+            if (node.active == false) {
+                let { children } = node;
+                if (children) {
+                    let ul = document.createElement('ul');
+                    for (let key in children) {
+                        let item = children[key];
+
+                        let li = document.createElement('li'); 
+                        {
+                            li.textContent = item.text;
+                            li.dataset.id = item.id
+                            li.dataset.parent = item.parent
+                            li.classList.add(`group-${item.parent}`)
+                            li.addEventListener("click", buildTree);
+                        }
+
+                        if ('children' in item) {
+                            li.classList.add('caret');
+                        }
+                        ul.appendChild(li);
+
+                    }
+                    this.appendChild(ul);
+                    this.classList.add('caret-down');
+                }
+                else {
+                    console.log('Navigate to url: ', node.href)
+                }
+                node.active = true
+            }
+            else {
+                this.classList.remove('caret-down');
+                const ul = this.querySelector('ul');
+                if (ul) {
+                    this.removeChild(ul);
+                }
+                node.active = false;
+            }
+        }
+
+        function findNode(id) {
+            return seracher[id]
+        }
+
+        window.onload = function () {
+            fetch('http://www.mocky.io/v2/5c3c7ad13100007400a1a401')
+                .then(response => response.json())
+                .then(data => {
+                    const { nodes } = data;
+
+                    if (nodes instanceof Array) {
+                        nodes.forEach((el) => {
+                            seracher[el.id] = el;
+                        });
+
+                        for (let key in seracher) {
+                            let el = seracher[key];
+
+                            el['active'] = false;
+
+                            if (el.parent === 0) {
+                                tree[el.id] = el
+                            }
+                            else {
+                                const node = findNode(el.parent);
+                                if (node == null) {
+                                    continue;
+                                }
+
+                                if (node['children'] == undefined) {
+                                    node['children'] = {};
+                                }
+                                node['children'][el.id] = (el)
+                            }
+                        }
+
+                        const root = document.getElementById('tree-root')
+
+                        for (let key in tree) {
+                            item = tree[key];
+
+                            const li = document.createElement('li');
+                            li.textContent = item.text;
+                            li.dataset.id = item.id
+                            li.dataset.parent = item.parent
+                            li.classList.add(`group-${item.parent}`)
+                            li.addEventListener("click", buildTree);
+
+                            if ('children' in item) {
+                                li.classList.add('caret');
+                            }
+
+                            root.appendChild(li);
+                        }
+                    }
+                });
+
+
+            const box = document.getElementById('search-box');
+            box.addEventListener("change", function (e) {
+                const node = findNode(this.value);
+                const result = document.getElementById('search-result');
+                if (node) {
+                    result.innerText = node.text;
+                }
+                else {
+                    result.innerHTML = '&nbsp;';
+                }
+                this.value = '';
+            });
+        };
+    </script>
+</body>
+
+</html>
