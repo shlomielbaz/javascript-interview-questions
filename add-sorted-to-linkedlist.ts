@@ -2,18 +2,19 @@
 
 class LinkedListNode {
     value;
-    next;
+    next: any;
 
-    constructor(value) {
+    constructor(value: number) {
         this.value = value;
         this.next = null
     }
 }
 
-class LinkedList {
-    head;
 
-    add(value) {
+class LinkedList {
+    private head: LinkedListNode | null = null;
+
+    add(value: number) {
         const node = new LinkedListNode(value);
         if (this.head === null || this.head === undefined) {
             this.head = node;
@@ -29,7 +30,7 @@ class LinkedList {
                     current.next = node;
                     break;
                 }
-                else if (current.value < node.value && current.next.value >= node.value) {
+                else if ((current.value === node.value) || (current.value < node.value && current.next.value > node.value)) {
                     node.next = current.next;
                     current.next = node;
                     break
@@ -48,6 +49,8 @@ class LinkedList {
             view.push(`[${current.value}]`)
             current = current.next;
         }
+
+        view.push('NULL')
         
         console.log(view.join(' -> '))
     }
