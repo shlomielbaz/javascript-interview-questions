@@ -10,7 +10,6 @@ class LinkedListNode {
     }
 }
 
-
 class LinkedList {
     head;
 
@@ -26,14 +25,14 @@ class LinkedList {
         else {
             let current = this.head;
             while (current != null) {
-                if (current.next && current.value < node.value && current.next.value >= node.value) {
+                if (current.next === null) {
+                    current.next = node;
+                    break;
+                }
+                else if (current.value < node.value && current.next.value >= node.value) {
                     node.next = current.next;
                     current.next = node;
                     break
-                }
-                else if (current.next === null) {
-                    current.next = node;
-                    break;
                 }
                 current = current.next;
             }
