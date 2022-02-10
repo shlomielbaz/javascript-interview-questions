@@ -21,9 +21,21 @@
   </li>
   
   <li>
-  Add new item to a LinkedList in a sorted way<be /><br />
+    Add new item to a LinkedList in a sorted way<br />
     Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/add-sorted-to-linkedlist.ts">add-sorted-to-linkedlist.ts</a>
     <br /><br />
-    
   </li>
+  
+  <li>
+    Write a function that gets an array and shuffle it<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/array-shuffle.js">array-shuffle.js</a>
+    <br /><br />
+  </li>
+  
+  <li>
+    Efficient way to count number of 1s in the binary representation of a number in O(1) if you have enough memory to play with. <br />
+    This is an interview question I found on an online forum, but it had no answer. Can somebody suggest something, I cant think of a way to do it in O(1) time?<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/bit-counter.js ">bit-counter.js</a>
+    <br /><br />
+  </li>   
 </ol>
