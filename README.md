@@ -44,10 +44,4 @@
     Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/check-valid-math.js">check-valid-math.js</a>
     <br /><br />
   </li>
-  
-  <li>
-    Write a function that checks if the math expression is valid<br />
-    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/check-valid-math.js">check-valid-math.js</a>
-    <br /><br />
-  </li>   
 </ol>
