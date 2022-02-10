@@ -44,4 +44,23 @@
     Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/check-valid-math.js">check-valid-math.js</a>
     <br /><br />
   </li>
+  
+  <li>
+    Create function that return unique random number between 0 to 100<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/unique-random-number.js">unique-random-number.js</a>
+    <br /><br />
+  </li>
+  
+  <li>
+    The functions myFunction1 and myFunction2 of MyClass can performed after and only after all the async operations in constructor are completed.<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/wait-until-ready.js">wait-until-ready.js</a>
+    <br /><br />
+  </li>
 </ol>
+
+
+
+
+
+
+
