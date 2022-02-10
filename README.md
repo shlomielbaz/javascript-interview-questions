@@ -35,7 +35,19 @@
   <li>
     Efficient way to count number of 1s in the binary representation of a number in O(1) if you have enough memory to play with. <br />
     This is an interview question I found on an online forum, but it had no answer. Can somebody suggest something, I cant think of a way to do it in O(1) time?<br />
-    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/bit-counter.js ">bit-counter.js</a>
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/bit-counter.js">bit-counter.js</a>
+    <br /><br />
+  </li>
+  
+  <li>
+    Write a function that checks if the math expression is valid<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/check-valid-math.js">check-valid-math.js</a>
+    <br /><br />
+  </li>
+  
+  <li>
+    Write a function that checks if the math expression is valid<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/check-valid-math.js">check-valid-math.js</a>
     <br /><br />
   </li>   
 </ol>
