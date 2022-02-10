@@ -1,12 +1,12 @@
 // Add new item to a linked list in  a sorted way
 
 class LinkedListNode {
-    value;
-    next: any;
+    value: number;
+    next: LinkedListNode | null;
 
     constructor(value: number) {
         this.value = value;
-        this.next = null
+        this.next = null;
     }
 }
 
@@ -21,7 +21,7 @@ class LinkedList {
         }
         else if (this.head.value > node.value) {
             node.next = this.head;
-            this.head = node
+            this.head = node;
         }
         else {
             let current = this.head;
@@ -33,7 +33,7 @@ class LinkedList {
                 else if ((current.value === node.value) || (current.value < node.value && current.next.value > node.value)) {
                     node.next = current.next;
                     current.next = node;
-                    break
+                    break;
                 }
                 current = current.next;
             }
@@ -46,12 +46,11 @@ class LinkedList {
         const view = [];
 
         while (current != null) {
-            view.push(`[${current.value}]`)
+            view.push(`[${current.value}]`);
             current = current.next;
         }
 
-        view.push('NULL')
-        
-        console.log(view.join(' -> '))
+        view.push('NULL');
+        console.log(view.join(' -> '));
     }
 }
