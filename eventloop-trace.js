@@ -46,8 +46,8 @@
 -- output:
   1 -> non-async
   5 -> non-async
-  2 -> async
   4 -> async
+  2 -> async
   3 -> async
 
 -- explantion:
