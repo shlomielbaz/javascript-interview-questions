@@ -25,7 +25,8 @@ function isValid(str) {
             stack.push(chr)
         }
         else {
-            if (stack.at(-1) != undefined && checker[chr] == stack.at(-1)) {
+            const peek = stack.at(-1);
+            if (peek != undefined && checker[chr] == peek) {
                stack.pop()
             }
             else {
