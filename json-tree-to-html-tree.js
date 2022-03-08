@@ -99,44 +99,39 @@ const spaces = (indentation, level) => {
 };
 
 const jsonTreeToHTMLList = (data, indentation, level = 0) => {
-	var ul = data['tag'];
-	let space = spaces(indentation, level);
+    var ul = data['tag'];
+    let space = spaces(indentation, level);
 
-	opens.push(`${space}<${ul}>\n`);
-	closes.push(`${space}</${ul}>\n`);
+    opens.push(`${space}<${ul}>\n`);
+    closes.unshift(`${space}</${ul}>\n`);
 
-	const children = data['children'];
+    const children = data['children'];
+    
+    
+    level = level + 1;
+    for (let i = 0; i < children.length; i++) {
+        let item = children[i];
 
-	level = level + 1;
-	for (let i = 0; i < children.length; i++) {
-		let item = children[i];
+        let li = item['tag'];
+        let text = item['text'];
+        space = spaces(indentation, level);
 
-		let li = item['tag'];
-		let text = item['text'];
-		space = spaces(indentation, level);
 
-		if ('children' in item) {
-			opens.push(`${space}<${li}>${text}\n`);
-			closes.push(`${space}</${li}>\n`);
+        if ('children' in item) {
+            opens.push(`${space}<${li}>${text}\n`);
+            closes.unshift(`${space}</${li}>\n`);
 
-			return jsonTreeToHTMLList(
-				item['children'][0],
-				indentation,
-				level + 1
-			);
-		} else {
-			opens.push(`${space}<${li}>${text}</${li}>\n`);
-		}
-	}
+            return jsonTreeToHTMLList(item['children'][0], indentation, (level + 1));
+        }
+        else {
+          opens.push(`${space}<${li}>${text}</${li}>\n`);
+        }
+    }
+    
 
-	let result = '';
-	for (var idx = 0; idx < opens.length; idx++) {
-		result += opens[idx];
-	}
-	for (var idx = closes.length - 1; idx >= 0; idx--) {
-		result += closes[idx];
-	}
-	console.log(result);
+    let result = opens.join("");
+    result += closes.join("");
+    console.log(result);
 };
 
 jsonTreeToHTMLList(data, 4);
