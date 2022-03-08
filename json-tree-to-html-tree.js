@@ -48,12 +48,10 @@ will generate the HTML:
 
 Online demo: https://playcode.io/870129/
 */
-
-var opens = [];
-var closes = [];
+var stack = [];
 
 var ul = null;
-var level = 1;
+var level = 1
 var data = {
     "tag": "ul",
     "children": [
@@ -88,27 +86,25 @@ var data = {
 };
 
 const spaces = (indentation, level) => {
-	var space = '';
-	var len = indentation * level;
+    var space = ''
+    var len = indentation * level
 
-	for (var j = 0; j < len; j++) {
-		space += ' ';
-	}
+    for (var j = 0; j < len; j++) {
+        space += ' '
+    }
 
-	return space;
-};
+    return space
+}
 
-const jsonTreeToHTMLList = (data, indentation, level = 0) => {
-    var ul = data['tag'];
+
+const jsonTreeToHTMLList = (data, indentation, level = 0, result = '') => {
+    let ul = data['tag'];
     let space = spaces(indentation, level);
-
-    opens.push(`${space}<${ul}>\n`);
-    closes.unshift(`${space}</${ul}>\n`);
-
+    result += `${space}<${ul}>\n`;
+    stack.unshift(`${space}</${ul}>\n`);
     const children = data['children'];
-    
-    
     level = level + 1;
+	
     for (let i = 0; i < children.length; i++) {
         let item = children[i];
 
@@ -118,20 +114,19 @@ const jsonTreeToHTMLList = (data, indentation, level = 0) => {
 
 
         if ('children' in item) {
-            opens.push(`${space}<${li}>${text}\n`);
-            closes.unshift(`${space}</${li}>\n`);
+            result += `${space}<${li}>${text}\n`;
+            stack.unshift(`${space}</${li}>\n`);
 
-            return jsonTreeToHTMLList(item['children'][0], indentation, (level + 1));
+            return jsonTreeToHTMLList(item['children'][0], indentation, (level + 1), result);
         }
         else {
-          opens.push(`${space}<${li}>${text}</${li}>\n`);
+          result += `${space}<${li}>${text}</${li}>\n`;
         }
     }
     
-
-    let result = opens.join("");
-    result += closes.join("");
+    result += stack.join("");
+    
     console.log(result);
 };
 
-jsonTreeToHTMLList(data, 4);
+jsonTreeToHTMLList(data, 4)
