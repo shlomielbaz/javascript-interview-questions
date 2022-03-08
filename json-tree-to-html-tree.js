@@ -107,7 +107,7 @@ const jsonTreeToHTMLList = (data, indentation, level = 0) => {
 
 	const children = data['children'];
 
-	if (children instanceof Array) level = level + 1;
+	level = level + 1;
 	for (let i = 0; i < children.length; i++) {
 		let item = children[i];
 
