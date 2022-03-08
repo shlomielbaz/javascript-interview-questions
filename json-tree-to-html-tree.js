@@ -49,96 +49,94 @@ will generate the HTML:
 Online demo: https://playcode.io/870129/
 */
 
-
 var opens = [];
 var closes = [];
 
 var ul = null;
-var level = 1
+var level = 1;
 var data = {
-    "tag": "ul",
-    "children": [
-        {
-            "tag": "li",
-            "text": "item 1"
-        },
-        {
-            "tag": "li",
-            "text": "item 2"
-        },
-        {
-            "tag": "li",
-            "text": "item 3",
-            "children": [
-                {
-                    "tag": "ul",
-                    "children": [
-                        {
-                            "tag": "li",
-                            "text": "item 3.1"
-                        },
-                        {
-                            "tag": "li",
-                            "text": "item 3.2"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+	tag: 'ul',
+	children: [
+		{
+			tag: 'li',
+			text: 'item 1',
+		},
+		{
+			tag: 'li',
+			text: 'item 2',
+		},
+		{
+			tag: 'li',
+			text: 'item 3',
+			children: [
+				{
+					tag: 'ul',
+					children: [
+						{
+							tag: 'li',
+							text: 'item 3.1',
+						},
+						{
+							tag: 'li',
+							text: 'item 3.2',
+						},
+					],
+				},
+			],
+		},
+	],
 };
 
 const spaces = (indentation, level) => {
-    var space = ''
-    var len = indentation * level
+	var space = '';
+	var len = indentation * level;
 
-    for (var j = 0; j < len; j++) {
-        space += ' '
-    }
+	for (var j = 0; j < len; j++) {
+		space += ' ';
+	}
 
-    return space
-}
-
-const jsonTreeToHTMLList = (data, indentation, level = 0) => {
-    var ul = data['tag'];
-    let space = spaces(indentation, level);
-
-    opens.push(`${space}<${ul}>\n`);
-    closes.push(`${space}</${ul}>\n`);
-
-    const children = data['children'];
-    
-    if (children instanceof Array)
-    level = level + 1;
-        for (let i = 0; i < children.length; i++) {
-            let item = children[i];
-
-            let li = item['tag'];
-            let text = item['text'];
-            space = spaces(indentation, level);
-
-            
-
-            if ('children' in item) {
-                opens.push(`${space}<${li}>${text}\n`);
-                closes.push(`${space}</${li}>\n`);
-
-                return jsonTreeToHTMLList(item['children'][0], indentation, (level + 1));
-            }
-            else {
-              opens.push(`${space}<${li}>${text}</${li}>\n`);
-            }
-        }
-    
-
-    let result = ''
-    for (var idx = 0; idx < opens.length; idx++) {
-        result += opens[idx];
-    }
-    for (var idx = (closes.length -1); idx >= 0; idx--) {
-        result += closes[idx];
-    }
-    console.log(result);
+	return space;
 };
 
-jsonTreeToHTMLList(data, 4)
+const jsonTreeToHTMLList = (data, indentation, level = 0) => {
+	var ul = data['tag'];
+	let space = spaces(indentation, level);
+
+	opens.push(`${space}<${ul}>\n`);
+	closes.push(`${space}</${ul}>\n`);
+
+	const children = data['children'];
+
+	if (children instanceof Array) level = level + 1;
+	for (let i = 0; i < children.length; i++) {
+		let item = children[i];
+
+		let li = item['tag'];
+		let text = item['text'];
+		space = spaces(indentation, level);
+
+		if ('children' in item) {
+			opens.push(`${space}<${li}>${text}\n`);
+			closes.push(`${space}</${li}>\n`);
+
+			return jsonTreeToHTMLList(
+				item['children'][0],
+				indentation,
+				level + 1
+			);
+		} else {
+			opens.push(`${space}<${li}>${text}</${li}>\n`);
+		}
+	}
+
+	let result = '';
+	for (var idx = 0; idx < opens.length; idx++) {
+		result += opens[idx];
+	}
+	for (var idx = closes.length - 1; idx >= 0; idx--) {
+		result += closes[idx];
+	}
+	console.log(result);
+};
+
+jsonTreeToHTMLList(data, 4);
