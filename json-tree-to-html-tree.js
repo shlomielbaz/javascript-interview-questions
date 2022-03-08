@@ -55,36 +55,36 @@ var closes = [];
 var ul = null;
 var level = 1;
 var data = {
-	tag: 'ul',
-	children: [
-		{
-			tag: 'li',
-			text: 'item 1',
-		},
-		{
-			tag: 'li',
-			text: 'item 2',
-		},
-		{
-			tag: 'li',
-			text: 'item 3',
-			children: [
-				{
-					tag: 'ul',
-					children: [
-						{
-							tag: 'li',
-							text: 'item 3.1',
-						},
-						{
-							tag: 'li',
-							text: 'item 3.2',
-						},
-					],
-				},
-			],
-		},
-	],
+    "tag": "ul",
+    "children": [
+        {
+            "tag": "li",
+            "text": "item 1"
+        },
+        {
+            "tag": "li",
+            "text": "item 2"
+        },
+        {
+            "tag": "li",
+            "text": "item 3",
+            "children": [
+                {
+                    "tag": "ul",
+                    "children": [
+                        {
+                            "tag": "li",
+                            "text": "item 3.1"
+                        },
+                        {
+                            "tag": "li",
+                            "text": "item 3.2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 };
 
 const spaces = (indentation, level) => {
