@@ -46,7 +46,9 @@ will generate the HTML:
     </li>
 </ul>
 
-Online demo: https://playcode.io/870129/
+Online demos: 
+	https://playcode.io/870129/
+	https://onecompiler.com/javascript/3xvgm84pr
 */
 const data = {
 	tag: 'ol',
