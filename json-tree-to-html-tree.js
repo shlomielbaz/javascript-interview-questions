@@ -168,3 +168,54 @@ const jsonTreeToHTMLList = (data, indentation, level = 0) => {
 };
 
 jsonTreeToHTMLList(data, 4);
+
+
+/// -- another version:
+
+const jsonTreeToHTMLList2 = (data, indentation, level = 0, result = '') => {
+    var ul = data['tag'];
+    
+    let space = spaces(indentation, level);
+
+    result += `${space}<${ul}>\n`;
+    
+    stack.unshift(`${space}</${ul}>\n`);
+
+    const children = data['children'];
+    
+    level = level + 1;
+    for (let i = 0; i < children.length; i++) {
+        let item = children[i];
+
+        let li = item['tag'];
+        let text = item['text'];
+        space = spaces(indentation, level);
+
+
+        if ('children' in item) {
+            result += `${space}<${li}>${text}\n`;
+            stack.unshift(`${space}</${li}>\n`);
+
+            return jsonTreeToHTMLList(item['children'][0], indentation, (level + 1), result);
+        }
+        else {
+          result += `${space}<${li}>${text}</${li}>\n`;
+        }
+    }
+    
+    result += stack.join("");
+    
+    return result;
+};
+
+const output = jsonTreeToHTMLList(data, 4)2;
+
+console.log(output)
+
+
+
+
+
+
+
+
