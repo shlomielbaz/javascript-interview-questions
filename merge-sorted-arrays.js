@@ -3,6 +3,8 @@
 // const B=[1,4,5,6,7,8,10,14]
 // C=[0,1,3,4,5,5,6,7,7,8,8,10,14]
 
+
+// Solution 1
 const mergeArr = (a, b) => {
     let a_idx = 0;
     let b_idx = 0;
@@ -22,8 +24,7 @@ const mergeArr = (a, b) => {
             c = c.concat(a.splice(a_idx, a.length));
             break;
         }
-        else{
-            
+        else {
             if (a[a_idx] > b[b_idx]) {
                 c.push(b[b_idx]);
                 b_idx++
@@ -44,6 +45,9 @@ const mergeArr = (a, b) => {
     }
     return c;
 }
+
+/// Solution 2 (using JS array methods)
+const arrMerge = (a, b) => a.concat(b).sort((x, y) => +x - +y)
 
 const A = [19,20]
 const B = [1,4,5,6,7,9,10,14]
