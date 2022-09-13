@@ -4,7 +4,7 @@
 // C=[0,1,3,4,5,5,6,7,7,8,8,10,14]
 
 
-// Solution 1
+// Solution 1 O(n)
 const mergeArr = (a, b) => {
     let a_idx = 0;
     let b_idx = 0;
@@ -46,7 +46,7 @@ const mergeArr = (a, b) => {
     return c;
 }
 
-/// Solution 2 (using JS array methods)
+/// Solution 2 O(n2)
 const arrMerge = (a, b) => a.concat(b).sort((x, y) => +x - +y)
 
 const A = [19,20]
