@@ -59,7 +59,15 @@
 
   <li>
     Write a function isBalanced(str) that returns true if the string contains balanced curly-braces. otherwise, false.<br />
-    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/is-balanced">is-balanced</a>
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/is-balanced.js">is-balanced.js</a>
+    <br /><br />
+  </li>
+
+  <li>
+    Lowest common ancestor (LCA)<br />
+    You are given references to two nodes in a binary tree.<br />
+    Find the root of the smallest subtree that contains both nodes. (one node may be an ancestor of another, in *which case this node is the solution)<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/LCA.js">LCA.js</a>
     <br /><br />
   </li>
 
