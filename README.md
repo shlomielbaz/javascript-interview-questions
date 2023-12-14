@@ -87,7 +87,28 @@
       [ - | X | X ]&nbsp;&nbsp;&nbsp;[ X | X | - | - ]&nbsp;&nbsp;&nbsp;[ - | - | - ]<br />
       [ - | - | - ]&nbsp;&nbsp;&nbsp;[ X | X | X | X ]&nbsp;&nbsp;&nbsp;[ - | - | - ]<br />
       [ - | - | - ]&nbsp;&nbsp;&nbsp;[ - | - | X | X ]&nbsp;&nbsp;&nbsp;[ X | X | - ]<br /><br />
-    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master//available-4-seats.js">/available-4-seats.js</a>
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/available-4-seats.js">available-4-seats.js</a>
+    <br /><br />
+</li>
+
+<li>
+  The prime 41, can be written as the sum of six consecutive primes:<br />
+2 + 3 + 5 + 7 + 11 + 13 = 41<br /><br />
+
+This is the longest sum of consecutive primes that adds to a prime below one-hundred.<br />
+The longest sum of consecutive primes below one-thousent that adds to a prime, contains 21 terms and is equal to 953.<br />
+Which prime, below one-milion, can be written as a sum of the most consecutive primes?<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/consecutive-prime.js">consecutive-prime.js</a>
+    <br /><br />
+</li>
+
+<li>
+  Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).<br /><br />
+
+Examples:<br />
+"the-stealth-warrior" gets converted to "theStealthWarrior"<br />
+"The_Stealth_Warrior" gets converted to "TheStealthWarrior"<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/convert-to-camel-case.js">convert-to-camel-case.js</a>
     <br /><br />
 </li>
   
