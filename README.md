@@ -52,10 +52,18 @@
   </li>
   
   <li>
-    The functions myFunction1 and myFunction2 of MyClass can performed after and only after all the async operations in constructor are completed.<br />
-    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/wait-until-ready.js">wait-until-ready.js</a>
+    JavaScript questions about currying. e.g. write a function that can be run like this fooFunc(3)(2).<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/currying.js">currying.js</a>
     <br /><br />
   </li>
+
+  <li>
+    Write a function isBalanced(str) that returns true if the string contains balanced curly-braces. otherwise, false.<br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/is-balanced">is-balanced</a>
+    <br /><br />
+  </li>
+
+  
 </ol>
 
 
