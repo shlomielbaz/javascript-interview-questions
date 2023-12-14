@@ -111,6 +111,27 @@ Examples:<br />
     Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/convert-to-camel-case.js">convert-to-camel-case.js</a>
     <br /><br />
 </li>
+
+<li>
+event loop print ordering<br />
+Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/eventloop-trace.js">eventloop-trace.js</a>
+  <br /><br />
+</li>
+
+<li>
+Make a program that filters a list of strings and returns a list with only your friends name in it.<br /><br />
+
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not<br /><br />
+
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]<br /><br />
+
+i.e.<br />
+
+friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]<br />
+Note: keep the original order of the names in the output.<br />
+Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/filter-by-length.js">filter-by-length.js</a>
+  <br /><br />
+</li>
   
 </ol>
 
