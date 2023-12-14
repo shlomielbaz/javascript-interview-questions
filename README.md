@@ -71,6 +71,25 @@
     <br /><br />
   </li>
 
+<li>
+  N - represent number of lines,<br />
+  A to K represent a seats mark (I excluded) of each line.<br /><br />
+
+  The seats in the hall orgenized:<br />
+  [ A | B | C ]&nbsp;&nbsp;&nbsp;[  D | E | F | G ]&nbsp;&nbsp;&nbsp;[  H | J | K ]<br /><br />
+
+
+  Your task is write a solution the returns the combination of sequence of 4 seats,<br />
+    the 'sequence' of 4 can be achived from:<br />
+      2 seats from the left/right groups and 2 seats from the middle group or;<br />
+      4 seats from the middle group, for example:<br />
+      [ A | B | C ]&nbsp;&nbsp;&nbsp;[ D | E | F | G ]&nbsp;&nbsp;&nbsp;[ H | J | K ]<br />
+      [ - | X | X ]&nbsp;&nbsp;&nbsp;[ X | X | - | - ]&nbsp;&nbsp;&nbsp;[ - | - | - ]<br />
+      [ - | - | - ]&nbsp;&nbsp;&nbsp;[ X | X | X | X ]&nbsp;&nbsp;&nbsp;[ - | - | - ]<br />
+      [ - | - | - ]&nbsp;&nbsp;&nbsp;[ - | - | X | X ]&nbsp;&nbsp;&nbsp;[ X | X | - ]<br /><br />
+    Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master//available-4-seats.js">/available-4-seats.js</a>
+    <br /><br />
+</li>
   
 </ol>
 
