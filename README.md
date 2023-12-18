@@ -132,6 +132,13 @@ Note: keep the original order of the names in the output.<br />
 Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/filter-by-length.js">filter-by-length.js</a>
   <br /><br />
 </li>
+
+
+<li>
+  Given an array Arr[] of size N, print all the subsets of the array.<br />
+Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/power-all-subsets.js">power-all-subsets.js</a>
+  <br /><br />
+</li>
   
 </ol>
 
