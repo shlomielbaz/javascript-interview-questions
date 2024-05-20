@@ -139,7 +139,13 @@ Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-
 Link to the code: <a href="https://github.com/shlomisderot/javascript-interview-questions/blob/master/power-all-subsets.js">power-all-subsets.js</a>
   <br /><br />
 </li>
-  
+
+<li>
+  reverse words without using any extra temporary variable.<br />
+Link to the code: <a href="reverse-words-without-temp.js">reverse-words-without-temp.js</a>
+  <br /><br />
+</li>
+ 
 </ol>
 
 
